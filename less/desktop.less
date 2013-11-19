@@ -1,3 +1,7 @@
+@min_width_px: 640px;
+@small_size_screen: ~"all and (max-width: @{min_width_px})";
+@full_size_screen: ~"all and (min-width: @{min_width_px + 1})";
+
 @import "../libs/lesshat/lesshat.less";
 
 body {
@@ -10,7 +14,7 @@ body {
 	text-align: center;
 	position: absolute;
 	width: 100%;
-	top: 40%;
+	top: 30%;
 }
 
 .title {
@@ -23,10 +27,22 @@ body {
 		padding: 10px;
 		text-decoration: none;
 		color: #000;
+		font-size: 18px;
 		.transition(all .4s 0s ease);
 		&:hover {
 			color: #fff;
 			background-color: lightBlue;
+		}
+	}
+}
+
+#content {
+	@media @small_size_screen {
+		.title {
+			font-size: 8vw;
+		}
+		.icons .icon {
+			font-size: 4vw;
 		}
 	}
 }
