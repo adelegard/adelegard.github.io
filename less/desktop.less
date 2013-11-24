@@ -16,6 +16,16 @@ body {
 	width: 100%;
 	top: 30%;
 }
+#content {
+	@media @small_size_screen {
+		.title {
+			font-size: 8vw;
+		}
+		.icons .icon {
+			font-size: 4vw;
+		}
+	}
+}
 
 .title {
 	font-size: 35px;
@@ -28,7 +38,9 @@ body {
 		text-decoration: none;
 		color: #000;
 		font-size: 18px;
-		.transition(all .4s 0s ease);
+		opacity: 0;
+		.transition(background-color .4s 0s ease, opacity 1.5s 2s ease);
+		.animation(opacityFadeOutIn 1.5s ease-in forwards);
 		&:hover {
 			color: #fff;
 			background-color: lightBlue;
@@ -36,13 +48,16 @@ body {
 	}
 }
 
-#content {
-	@media @small_size_screen {
-		.title {
-			font-size: 8vw;
-		}
-		.icons .icon {
-			font-size: 4vw;
-		}
+/* looping mixin */
+.loop (@index) when (@index > 0) {
+	.icon:nth-child(@{index}) {
+		@delay: (@index * .25);
+		.animation-delay(unit(@delay, s));
 	}
+  .loop((@index - 1));
 }
+.icons {
+  .loop(5);
+}
+
+.keyframes(~'opacityFadeOutIn, 0%{ opacity: 0 } 100%{ opacity: 1 }');

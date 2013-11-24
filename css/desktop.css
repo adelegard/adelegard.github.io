@@ -8,6 +8,14 @@ body {
   width: 100%;
   top: 30%;
 }
+@media all and (max-width: 640px) {
+  #content .title {
+    font-size: 8vw;
+  }
+  #content .icons .icon {
+    font-size: 4vw;
+  }
+}
 .title {
   font-size: 35px;
   font-weight: normal;
@@ -17,20 +25,55 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  -webkit-transition: all 0.4s 0s ease;
-  -moz-transition: all 0.4s 0s ease;
-  -o-transition: all 0.4s 0s ease;
-  transition: all 0.4s 0s ease;
+  opacity: 0;
+  -webkit-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
+  -moz-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
+  -o-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
+  transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
+  -webkit-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  -moz-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  -o-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  animation: opacityFadeOutIn 1.5s ease-in forwards;
 }
 .icons .icon:hover {
   color: #fff;
   background-color: lightBlue;
 }
-@media all and (max-width: 640px) {
-  #content .title {
-    font-size: 8vw;
-  }
-  #content .icons .icon {
-    font-size: 4vw;
-  }
+/* looping mixin */
+.icons .icon:nth-child( 5) {
+  -webkit-animation-delay: 1.25s;
+  -moz-animation-delay: 1.25s;
+  -o-animation-delay: 1.25s;
+  animation-delay: 1.25s;
+}
+.icons .icon:nth-child( 4) {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.icons .icon:nth-child( 3) {
+  -webkit-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
+  -o-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+.icons .icon:nth-child( 2) {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.icons .icon:nth-child( 1) {
+  -webkit-animation-delay: 0.25s;
+  -moz-animation-delay: 0.25s;
+  -o-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+lesshat-selector {
+  -lh-property: 0; } 
+@-webkit-keyframes opacityFadeOutIn{ 0%{ opacity: 0 } 100%{ opacity: 1 }}
+@-moz-keyframes opacityFadeOutIn{ 0%{ opacity: 0 } 100%{ opacity: 1 }}
+@-o-keyframes opacityFadeOutIn{ 0%{ opacity: 0 } 100%{ opacity: 1 }}
+@keyframes opacityFadeOutIn{ 0%{ opacity: 0 } 100%{ opacity: 1 };
 }
