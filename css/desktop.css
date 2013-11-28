@@ -19,6 +19,11 @@ body {
 .title {
   font-size: 35px;
   font-weight: normal;
+  opacity: 0;
+  -webkit-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  -moz-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  -o-animation: opacityFadeOutIn 1.5s ease-in forwards;
+  animation: opacityFadeOutIn 1.5s ease-in forwards;
 }
 .icons .icon {
   padding: 10px;
@@ -40,31 +45,31 @@ body {
   background-color: lightBlue;
 }
 /* looping mixin */
-.icons .icon:nth-child( 5) {
+.icons .icon:nth-child(5) {
   -webkit-animation-delay: 1.25s;
   -moz-animation-delay: 1.25s;
   -o-animation-delay: 1.25s;
   animation-delay: 1.25s;
 }
-.icons .icon:nth-child( 4) {
+.icons .icon:nth-child(4) {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   -o-animation-delay: 1s;
   animation-delay: 1s;
 }
-.icons .icon:nth-child( 3) {
+.icons .icon:nth-child(3) {
   -webkit-animation-delay: 0.75s;
   -moz-animation-delay: 0.75s;
   -o-animation-delay: 0.75s;
   animation-delay: 0.75s;
 }
-.icons .icon:nth-child( 2) {
+.icons .icon:nth-child(2) {
   -webkit-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
   -o-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-.icons .icon:nth-child( 1) {
+.icons .icon:nth-child(1) {
   -webkit-animation-delay: 0.25s;
   -moz-animation-delay: 0.25s;
   -o-animation-delay: 0.25s;
