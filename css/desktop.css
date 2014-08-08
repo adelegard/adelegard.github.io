@@ -26,11 +26,15 @@ body {
   animation: opacityFadeOutIn 1.5s ease-in forwards;
 }
 .icons .icon {
+  display: none;
   padding: 10px;
   text-decoration: none;
   color: #000;
   font-size: 18px;
   opacity: 0;
+}
+.icons .icon.loaded {
+  display: inline;
   -webkit-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
   -moz-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;
   -o-transition: background-color 0.4s 0s ease, opacity 1.5s 2s ease;

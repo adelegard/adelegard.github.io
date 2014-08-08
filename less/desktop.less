@@ -36,13 +36,17 @@ body {
 
 .icons {
 	.icon {
+		display: none;
 		padding: 10px;
 		text-decoration: none;
 		color: #000;
 		font-size: 18px;
 		opacity: 0;
-		.transition(background-color .4s 0s ease, opacity 1.5s 2s ease);
-		.animation(opacityFadeOutIn 1.5s ease-in forwards);
+		&.loaded {
+			display: inline;
+			.transition(background-color .4s 0s ease, opacity 1.5s 2s ease);
+			.animation(opacityFadeOutIn 1.5s ease-in forwards);
+		}
 		&:hover {
 			color: #fff;
 			background-color: lightBlue;

@@ -1,7 +1,7 @@
 $(function() {
 	waitForHiddenIcon(function() {
 	    // Will be called as soon as ALL specified fonts are available
-	    $(".icon").show();
+	    $(".icon").addClass("loaded");
 	});
 
 	function waitForHiddenIcon(callback) {
